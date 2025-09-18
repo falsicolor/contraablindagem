@@ -21,7 +21,7 @@ export function Analytics() {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'GA_MEASUREMENT_ID', {
-        page_title: 'Brasil que Trabalha',
+        page_title: 'Não à PEC da Blindagem',
         page_location: window.location.href,
         content_group1: 'Landing Page'
       });
