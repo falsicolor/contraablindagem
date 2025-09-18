@@ -183,7 +183,7 @@ export function SignatureForm({ variant, onSuccess }: SignatureFormProps) {
   };
 
   const handleWhatsAppShare = () => {
-    const message = encodeURIComponent("Assinei contra a PEC da Blindagem que protege criminosos no Congresso. Assina também! " + window.location.origin + " #NãoÀPECDaBlindagem");
+    const message = encodeURIComponent("Assinei Não à PEC da Blindagem. Assina também? https://naoapecdablindagem.com.br/");
     window.open(`https://wa.me/?text=${message}`, '_blank');
     
       // Tracking do compartilhamento

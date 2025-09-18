@@ -8,7 +8,7 @@ export function WhatsAppShare() {
   const { toast } = useToast();
 
   const handleWhatsAppShare = () => {
-    const message = encodeURIComponent("Assinei o Brasil que Trabalha: corta privilégios no topo pra investir no básico. Assina também? " + window.location.origin + " #BrasilQueTrabalha");
+    const message = encodeURIComponent("Assinei Não à PEC da Blindagem. Assina também? https://naoapecdablindagem.com.br/");
     window.open(`https://wa.me/?text=${message}`, '_blank');
     
     // Tracking
@@ -60,8 +60,7 @@ export function WhatsAppShare() {
             <div className="bg-muted rounded-lg p-4 mb-6 text-left">
               <p className="text-sm text-muted-foreground mb-2">Mensagem sugerida:</p>
               <p className="text-foreground font-medium leading-relaxed">
-                "Assinei o Brasil que Trabalha: corta privilégios no topo pra investir no básico. 
-                Assina também? {window.location.origin} #BrasilQueTrabalha"
+                "Assinei Não à PEC da Blindagem. Assina também? https://naoapecdablindagem.com.br/"
               </p>
             </div>
 
