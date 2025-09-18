@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      signatures: {
+        Row: {
+          cidade: string
+          created_at: string
+          email: string
+          email_authorization: boolean
+          estado: string
+          id: string
+          nome: string
+          telefone: string
+          updated_at: string
+          whatsapp_authorization: boolean
+        }
+        Insert: {
+          cidade: string
+          created_at?: string
+          email: string
+          email_authorization?: boolean
+          estado: string
+          id?: string
+          nome: string
+          telefone: string
+          updated_at?: string
+          whatsapp_authorization?: boolean
+        }
+        Update: {
+          cidade?: string
+          created_at?: string
+          email?: string
+          email_authorization?: boolean
+          estado?: string
+          id?: string
+          nome?: string
+          telefone?: string
+          updated_at?: string
+          whatsapp_authorization?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
