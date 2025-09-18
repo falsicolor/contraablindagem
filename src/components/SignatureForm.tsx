@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Loader2, CheckCircle2, Share, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface SignatureFormProps {
   variant: 'A' | 'B';
@@ -43,6 +44,7 @@ export function SignatureForm({ variant, onSuccess }: SignatureFormProps) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [signatureCount, setSignatureCount] = useState(0);
   const [formData, setFormData] = useState<FormData>({
     nome: '',
     telefone: '',
@@ -121,35 +123,38 @@ export function SignatureForm({ variant, onSuccess }: SignatureFormProps) {
       if (lastSubmit && (now - parseInt(lastSubmit)) < 30000) { // 30 segundos
         throw new Error('Aguarde um pouco antes de enviar novamente');
       }
-      
-      // Coletar dados UTM
-      const urlParams = new URLSearchParams(window.location.search);
-      const submitData = {
-        ...formData,
-        timestamp: new Date().toISOString(),
-        utm_source: urlParams.get('utm_source') || '',
-        utm_medium: urlParams.get('utm_medium') || '',
-        utm_campaign: urlParams.get('utm_campaign') || '',
-        utm_content: urlParams.get('utm_content') || '',
-        user_agent: navigator.userAgent,
-        ip_hash: 'hashed_ip', // Seria processado no backend
-        variant: variant
+
+      // Prepare data for database insertion
+      const signatureData = {
+        nome: formData.nome,
+        telefone: formData.telefone,
+        email: formData.email,
+        estado: formData.uf || '',
+        cidade: formData.cidade || '',
+        whatsapp_authorization: formData.optinWhatsApp || false,
+        email_authorization: formData.optinEmail || false
       };
 
-      // Aqui seria feita a integração real com Google Sheets/Webhook
-      console.log('Dados para envio:', submitData);
-      
-      // Simular envio
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Insert into Supabase database
+      const { data, error } = await supabase
+        .from('signatures')
+        .insert([signatureData]);
+
+      if (error) {
+        throw new Error(`Erro ao salvar assinatura: ${error.message}`);
+      }
+
+      // Get total count of signatures
+      const { count } = await supabase
+        .from('signatures')
+        .select('*', { count: 'exact', head: true });
       
       // Salvar timestamp do envio
       localStorage.setItem('lastSubmit', now.toString());
       
-      // Incrementar contador (simulado)
-      const newTotal = Math.floor(Math.random() * 1000) + 15000;
-      
       setIsSuccess(true);
-      onSuccess(newTotal);
+      setSignatureCount(count || 0);
+      onSuccess(count || 0);
       
       toast({
         title: "Obrigado por assinar!",
@@ -235,14 +240,14 @@ export function SignatureForm({ variant, onSuccess }: SignatureFormProps) {
           </Button>
         </div>
 
-        <div className="bg-muted rounded-lg p-4">
-          <p className="text-sm text-muted-foreground mb-2">
-            Contador atualizado:
-          </p>
-          <p className="font-bold text-lg text-foreground">
-            15.247 pessoas já assinaram
-          </p>
-        </div>
+         <div className="bg-muted rounded-lg p-4">
+           <p className="text-sm text-muted-foreground mb-2">
+             Contador atualizado:
+           </p>
+           <p className="font-bold text-lg text-foreground">
+             {signatureCount.toLocaleString('pt-BR')} pessoas já assinaram
+           </p>
+         </div>
       </div>
     );
   }
