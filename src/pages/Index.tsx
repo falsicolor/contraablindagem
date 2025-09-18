@@ -11,7 +11,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const [variant, setVariant] = useState<'A' | 'B'>('A');
-  const [totalSignatures, setTotalSignatures] = useState(15234);
+  const [totalSignatures, setTotalSignatures] = useState("Muitos");
 
   useEffect(() => {
     // A/B Testing - 50/50 split
@@ -35,11 +35,11 @@ const Index = () => {
           setTotalSignatures(Number(data));
         } else {
           // Fallback to default count if fetch fails
-          setTotalSignatures(15234);
+          setTotalSignatures("Muitos");
         }
       } catch (error) {
         console.log('Error fetching signature count:', error);
-        setTotalSignatures(15234);
+        setTotalSignatures("Muitos");
       }
     };
 
