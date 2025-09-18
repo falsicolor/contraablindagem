@@ -82,6 +82,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_signature_count: {
+        Args: Record<PropertyKey, never>
+        Returns: number
+      }
       is_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean

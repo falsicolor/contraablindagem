@@ -7,6 +7,7 @@ import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
 import { SEOHead } from "@/components/SEOHead";
+import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const [variant, setVariant] = useState<'A' | 'B'>('A');
@@ -26,9 +27,23 @@ const Index = () => {
       localStorage.setItem('ab-variant', currentVariant);
     }
 
-    // Simular contador dinâmico
-    const baseCount = 15000 + Math.floor(Math.random() * 1000);
-    setTotalSignatures(baseCount);
+    // Fetch real signature count from database
+    const fetchSignatureCount = async () => {
+      try {
+        const { data, error } = await supabase.rpc('get_signature_count');
+        if (!error && data !== null) {
+          setTotalSignatures(Number(data));
+        } else {
+          // Fallback to default count if fetch fails
+          setTotalSignatures(15234);
+        }
+      } catch (error) {
+        console.log('Error fetching signature count:', error);
+        setTotalSignatures(15234);
+      }
+    };
+
+    fetchSignatureCount();
 
     // Tracking do experimento A/B
     if (typeof window !== 'undefined' && (window as any).gtag) {
