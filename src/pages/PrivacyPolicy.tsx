@@ -5,10 +5,10 @@ export default function PrivacyPolicy() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">
-              Política de Privacidade
+              Política de Privacidade — Contra A Blindagem
             </h1>
             <p className="text-muted-foreground">
-              Última atualização: dezembro de 2024
+              Vigente a partir de 18/09/2025
             </p>
           </div>
 
@@ -16,101 +16,88 @@ export default function PrivacyPolicy() {
             <section className="bg-card rounded-lg p-8">
               <h2 className="text-2xl font-bold text-foreground mb-4">1. Quem somos</h2>
               <p className="text-muted-foreground leading-relaxed">
-                O Brasil que Trabalha é um movimento suprapartidário que tem como objetivo promover 
-                maior transparência e eficiência no uso dos recursos públicos, com foco na aplicação 
-                do teto constitucional e no fortalecimento dos serviços básicos.
+                "Contra A Blindagem" é uma iniciativa cívica supra-partidária, sem fins lucrativos e <strong>sem CNPJ</strong>, criada para mobilizar cidadãos contra a "PEC da Blindagem". Esta política explica como tratamos seus dados pessoais ao assinar o manifesto.
               </p>
             </section>
 
             <section className="bg-card rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">2. Dados coletados</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">Coletamos os seguintes dados:</p>
+              <h2 className="text-2xl font-bold text-foreground mb-4">2. Dados que coletamos</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">Ao assinar o manifesto, coletamos:</p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li><strong>Dados obrigatórios:</strong> Nome completo, telefone (WhatsApp) e e-mail</li>
-                <li><strong>Dados opcionais:</strong> Cidade e UF</li>
-                <li><strong>Preferências de comunicação:</strong> Consentimento para WhatsApp e e-mail</li>
-                <li><strong>Dados técnicos:</strong> IP (hash), user agent, parâmetros UTM</li>
-              </ul>
-            </section>
-
-            <section className="bg-card rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">3. Finalidade e base legal</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Utilizamos seus dados com base no <strong>consentimento</strong> (Art. 7º, I da LGPD) para:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>Registrar seu apoio ao movimento Brasil que Trabalha</li>
-                <li>Demonstrar força popular da campanha através de contadores públicos</li>
-                <li>Enviar atualizações sobre o andamento do movimento (apenas se consentir)</li>
-                <li>Análises estatísticas agregadas e anônimas</li>
-              </ul>
-            </section>
-
-            <section className="bg-card rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">4. Compartilhamento</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                <strong>Não vendemos nem compartilhamos</strong> seus dados pessoais com terceiros. 
-                Dados agregados e anônimos podem ser divulgados publicamente para demonstrar 
-                o alcance do movimento (ex: "15.000 pessoas de 500 cidades já aderiram").
-              </p>
-            </section>
-
-            <section className="bg-card rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">5. Armazenamento e retenção</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Seus dados são armazenados em serviços seguros (Google Sheets com criptografia) 
-                e serão mantidos enquanto a campanha estiver ativa. Após o encerramento, dados 
-                pessoais serão anonimizados ou excluídos, mantendo apenas estatísticas agregadas.
-              </p>
-            </section>
-
-            <section className="bg-card rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">6. Seus direitos (LGPD)</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">Você tem direito a:</p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li><strong>Acesso:</strong> Saber quais dados temos sobre você</li>
-                <li><strong>Retificação:</strong> Corrigir dados incorretos</li>
-                <li><strong>Exclusão:</strong> Solicitar remoção dos seus dados</li>
-                <li><strong>Portabilidade:</strong> Receber seus dados em formato estruturado</li>
-                <li><strong>Revogação:</strong> Cancelar comunicações a qualquer momento</li>
+                <li><strong>Nome</strong></li>
+                <li><strong>Telefone</strong></li>
+                <li><strong>E-mail</strong></li>
+                <li><strong>UF</strong></li>
+                <li><strong>Cidade</strong></li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                Para exercer esses direitos, envie e-mail para: 
-                <a href="mailto:privacidade@brasilquetrabalha.com.br" className="text-primary hover:underline ml-1">
-                  privacidade@brasilquetrabalha.com.br
-                </a>
+                Não coletamos dados pessoais sensíveis. A assinatura pode indicar apoio à causa, mas não pedimos filiação partidária nem outras categorias sensíveis.
               </p>
             </section>
 
             <section className="bg-card rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">7. Segurança</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Adotamos medidas técnicas e organizacionais para proteger seus dados contra 
-                acesso não autorizado, perda ou vazamento. Isso inclui criptografia, 
-                controle de acesso e monitoramento de segurança.
+              <h2 className="text-2xl font-bold text-foreground mb-4">3. Finalidades de uso</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">Usamos seus dados para:</p>
+              <ol className="list-decimal list-inside text-muted-foreground space-y-2">
+                <li><strong>Registrar sua assinatura</strong> e evitar duplicidades.</li>
+                <li><strong>Comunicar atualizações</strong> sobre a campanha.</li>
+                <li><strong>Organizar mobilização por território</strong> (UF/Cidade) e produzir estatísticas agregadas.</li>
+                <li><strong>Entregar o abaixo-assinado</strong> a autoridades/imprensa, preferindo dados agregados e anonimizados.</li>
+              </ol>
+            </section>
+
+            <section className="bg-card rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4">4. Bases legais</h2>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                <li><strong>Consentimento</strong> (art. 7º, I, LGPD).</li>
+                <li><strong>Legítimo interesse</strong> (art. 7º, IX), com minimização de dados. Você pode se opor a qualquer momento pelos canais indicados na página do manifesto.</li>
+              </ul>
+            </section>
+
+            <section className="bg-card rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4">5. Compartilhamento</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">Podemos compartilhar dados <strong>estritamente necessários</strong> com:</p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                <li><strong>Provedores de tecnologia</strong> (hospedagem, e-mail/WhatsApp, formulários) como <strong>operadores</strong>.</li>
+                <li><strong>Autoridades públicas e parlamentares</strong>, excepcionalmente, para comprovar apoio ao manifesto, priorizando dados agregados.</li>
+              </ul>
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                <strong>Não vendemos seus dados.</strong>
               </p>
             </section>
 
             <section className="bg-card rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">8. Alterações</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">6. Armazenamento e segurança</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Esta política pode ser atualizada. Mudanças significativas serão comunicadas 
-                através dos canais de contato fornecidos por você.
+                Adotamos medidas técnicas e administrativas razoáveis para proteger os dados. O armazenamento pode ocorrer em nuvem, inclusive fora do Brasil, com salvaguardas contratuais e padrões amplamente aceitos.
               </p>
             </section>
 
             <section className="bg-card rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">9. Contato</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">7. Retenção</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Para dúvidas sobre privacidade: 
-                <a href="mailto:privacidade@brasilquetrabalha.com.br" className="text-primary hover:underline ml-1">
-                  privacidade@brasilquetrabalha.com.br
-                </a>
-                <br />
-                Para assuntos gerais: 
-                <a href="mailto:contato@brasilquetrabalha.com.br" className="text-primary hover:underline ml-1">
-                  contato@brasilquetrabalha.com.br
-                </a>
+                Mantemos os dados <strong>pelo tempo necessário</strong> à campanha e eventuais obrigações correlatas. Encerrada a finalidade, <strong>eliminaremos</strong> ou <strong>anonimizaremos</strong> os dados, salvo conservação exigida por lei ou para defesa de direitos.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4">8. Menores de idade</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                A assinatura deve ser feita por <strong>maiores de 16 anos</strong>. Se identificarmos assinatura de menor sem responsável, adotaremos medidas para exclusão dos dados.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4">9. Alterações desta política</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Podemos atualizar esta política para refletir melhorias, mudanças legais ou operacionais. A versão atualizada será publicada na página do manifesto, com <strong>data de vigência</strong>. Mudanças relevantes poderão requerer <strong>novo consentimento</strong>.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-lg p-8 border-2 border-primary/20">
+              <h3 className="text-xl font-bold text-foreground mb-4">Resumo prático</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Coletamos <strong>nome, telefone, e-mail, UF e cidade</strong> para registrar sua assinatura, comunicar novidades e organizar a mobilização. <strong>Não vendemos</strong> seus dados. Preferimos divulgar <strong>dados agregados</strong> e <strong>anonimizados</strong>.
               </p>
             </section>
           </div>
