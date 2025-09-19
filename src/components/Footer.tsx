@@ -5,9 +5,9 @@ export function Footer() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-2">Brasil que Trabalha</h3>
+              <h3 className="text-2xl font-bold mb-2">Contra a PEC da Blindagem</h3>
               <p className="text-lg font-medium opacity-90">
-                "Preço no bolso. Fila andando. Lei pra todos."
+                "Justiça ativa. Punição para criminosos. Lei pra todos."
               </p>
             </div>
             
@@ -35,7 +35,7 @@ export function Footer() {
           
           <div className="border-t border-primary-foreground/20 pt-6 text-center">
             <p className="text-sm opacity-75">
-              Brasil que Trabalha • #BrasilQueTrabalha
+              Não à PEC da Blindagem • #NaoaPECdaBlindagem
             </p>
             <p className="text-xs opacity-60 mt-2">
               © 2024 - Movimento suprapartidário por um Brasil mais justo
