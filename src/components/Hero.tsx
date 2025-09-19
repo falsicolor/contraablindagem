@@ -4,7 +4,7 @@ import { SignatureForm } from "./SignatureForm";
 
 interface HeroProps {
   variant: 'A' | 'B';
-  totalSignatures: number;
+  totalSignatures: number | string;
   onSuccess: (newTotal: number) => void;
 }
 
@@ -56,46 +56,49 @@ export function Hero({ variant, totalSignatures, onSuccess }: HeroProps) {
         <div className="absolute top-1/3 right-1/4 w-16 h-16 rotate-12">🚨</div>
       </div>
       
-      <div className="container relative z-10 mx-auto px-4 pt-20 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="container relative z-10 mx-auto px-4 pt-16 sm:pt-20 pb-12 sm:pb-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           
           {/* Content Column */}
           <div className="text-center lg:text-left animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-tight mb-6 drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground leading-tight mb-6 drop-shadow-lg break-words">
               {content.h1}
             </h1>
             
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground leading-relaxed mb-8">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground leading-relaxed mb-8 break-words">
               {content.h2}
             </h2>
 
             {/* Problems with PEC */}
-            <div className="space-y-4 mb-8 text-left max-w-lg mx-auto lg:mx-0">
-              <div className="flex items-center gap-4 text-foreground font-medium">
-                <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="space-y-3 mb-8 text-left max-w-lg mx-auto lg:mx-0">
+              <div className="flex items-start gap-3 text-foreground font-medium">
+                <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-xs">⚠️</span>
                 </div>
-                <span className="text-lg">Entre 1988-2001: 250+ crimes, apenas 1 processo autorizado</span>
+                <span className="text-base sm:text-lg leading-snug">Entre 1988-2001: 250+ crimes, apenas 1 processo autorizado</span>
               </div>
-              <div className="flex items-center gap-4 text-foreground font-medium">
-                <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-3 text-foreground font-medium">
+                <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-xs">⚠️</span>
                 </div>
-                <span className="text-lg">Blinda até estupros e violência doméstica</span>
+                <span className="text-base sm:text-lg leading-snug">Blinda até estupros e violência doméstica</span>
               </div>
-              <div className="flex items-center gap-4 text-foreground font-medium">
-                <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-3 text-foreground font-medium">
+                <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-xs">⚠️</span>
                 </div>
-                <span className="text-lg">Protege políticos ligados ao crime organizado</span>
+                <span className="text-base sm:text-lg leading-snug">Protege políticos ligados ao crime organizado</span>
               </div>
             </div>
 
             {/* Urgent Counter */}
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-8">
-              <div className={`bg-primary/20 backdrop-blur-sm rounded-full px-4 py-2 border border-primary/30 transition-transform duration-500 ${animateCount ? 'animate-pulse-yellow' : ''}`}>
-                <span className="text-primary font-bold text-lg">
-                  {totalSignatures.toLocaleString('pt-BR')} brasileiros contra a PEC
+              <div className={`bg-primary/20 backdrop-blur-sm rounded-full px-3 py-2 border border-primary/30 transition-transform duration-500 ${animateCount ? 'animate-pulse-yellow' : ''}`}>
+                <span className="text-primary font-bold text-sm sm:text-base lg:text-lg text-center">
+                  {typeof totalSignatures === 'number' 
+                    ? `${totalSignatures.toLocaleString('pt-BR')} brasileiros contra a PEC`
+                    : `${totalSignatures} brasileiros contra a PEC`
+                  }
                 </span>
               </div>
             </div>

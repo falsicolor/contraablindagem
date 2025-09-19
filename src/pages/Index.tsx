@@ -11,7 +11,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const [variant, setVariant] = useState<'A' | 'B'>('A');
-  const [totalSignatures, setTotalSignatures] = useState("Muitos");
+  const [totalSignatures, setTotalSignatures] = useState<number | string>("Muitos");
 
   useEffect(() => {
     // A/B Testing - 50/50 split
