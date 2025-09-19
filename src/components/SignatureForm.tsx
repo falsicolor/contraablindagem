@@ -312,7 +312,7 @@ export function SignatureForm({ variant, onSuccess }: SignatureFormProps) {
           {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <Label htmlFor="uf" className="text-sm font-medium text-foreground">
               Estado

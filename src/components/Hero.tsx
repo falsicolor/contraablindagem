@@ -61,11 +61,11 @@ export function Hero({ variant, totalSignatures, onSuccess }: HeroProps) {
           
           {/* Content Column */}
           <div className="text-center lg:text-left animate-fade-in">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground leading-tight mb-6 drop-shadow-lg break-words">
+            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground leading-tight mb-6 drop-shadow-lg break-words hyphens-auto">
               {content.h1}
             </h1>
             
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground leading-relaxed mb-8 break-words">
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-muted-foreground leading-relaxed mb-8 break-words hyphens-auto">
               {content.h2}
             </h2>
 
@@ -75,19 +75,19 @@ export function Hero({ variant, totalSignatures, onSuccess }: HeroProps) {
                 <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-xs">⚠️</span>
                 </div>
-                <span className="text-base sm:text-lg leading-snug">Entre 1988-2001: 250+ crimes, apenas 1 processo autorizado</span>
+                <span className="text-sm sm:text-base lg:text-lg leading-snug break-words">Entre 1988-2001: 250+ crimes, apenas 1 processo autorizado</span>
               </div>
               <div className="flex items-start gap-3 text-foreground font-medium">
                 <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-xs">⚠️</span>
                 </div>
-                <span className="text-base sm:text-lg leading-snug">Blinda até estupros e violência doméstica</span>
+                <span className="text-sm sm:text-base lg:text-lg leading-snug break-words">Blinda até estupros e violência doméstica</span>
               </div>
               <div className="flex items-start gap-3 text-foreground font-medium">
                 <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-xs">⚠️</span>
                 </div>
-                <span className="text-base sm:text-lg leading-snug">Protege políticos ligados ao crime organizado</span>
+                <span className="text-sm sm:text-base lg:text-lg leading-snug break-words">Protege políticos ligados ao crime organizado</span>
               </div>
             </div>
 
