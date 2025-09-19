@@ -37,26 +37,26 @@ export function Hero({ variant, totalSignatures, onSuccess }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-[100svh] bg-hero-gradient overflow-x-hidden">
+    <section className="relative min-h-[100svh] bg-hero-gradient [overflow-x:clip]">
       {/* Dramatic Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background"></div>
       
       {/* Lightning Effects - Hidden on mobile to prevent overflow */}
-      <div className="absolute inset-0 opacity-10 hidden sm:block pointer-events-none">
+      <div className="absolute inset-0 opacity-10 hidden sm:block pointer-events-none [contain:layout]">
         <div className="absolute top-20 left-1/4 w-1 h-32 bg-primary animate-lightning transform rotate-12"></div>
         <div className="absolute bottom-40 right-1/3 w-1 h-24 bg-primary animate-lightning transform -rotate-45"></div>
         <div className="absolute top-1/2 left-1/6 w-1 h-20 bg-primary animate-lightning transform rotate-45"></div>
       </div>
 
       {/* Dark Pattern Overlay - Reduced on mobile */}
-      <div className="absolute inset-0 opacity-5 hidden sm:block pointer-events-none">
+      <div className="absolute inset-y-0 left-0 right-0 opacity-5 hidden sm:block pointer-events-none [contain:layout]">
         <div className="absolute top-10 left-10 w-20 h-20 rotate-12">⚖️</div>
         <div className="absolute top-32 right-16 w-16 h-16 -rotate-12">🏛️</div>
         <div className="absolute bottom-40 left-20 w-18 h-18 rotate-45">⛓️</div>
         <div className="absolute top-1/3 right-1/4 w-16 h-16 rotate-12">🚨</div>
       </div>
       
-      <div className="container relative z-10 mx-auto px-2 sm:px-4 pt-12 sm:pt-16 pb-24 sm:pb-12">
+      <div className="w-full max-w-[100vw] mx-auto px-2 sm:px-4 pt-12 sm:pt-16 pb-24 sm:pb-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           
           {/* Content Column */}
